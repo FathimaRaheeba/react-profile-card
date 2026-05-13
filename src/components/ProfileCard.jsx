@@ -1,6 +1,10 @@
 import qr from "../assets/qr.png"
+import { useNavigate } from "react-router-dom"
 
-function ProfileCard({ image, name, role, phone, email, location }) {
+function ProfileCard({ id, image, name, role, phone, email, location }) {
+
+   const navigate = useNavigate()
+
   return (
 
 <div className="bg-white w-80 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
@@ -49,8 +53,23 @@ function ProfileCard({ image, name, role, phone, email, location }) {
           />
         </div>
 
-<button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg mt-5 transition duration-300">          Follow
-        </button>
+  <button
+  onClick={() => {
+    navigate(`/profile/${id}`, {
+        state: {
+        id,
+        image,
+        name,
+        role,
+        phone,
+        email,
+        location
+      }
+    })
+  }}
+  className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg mt-5">
+  View Profile
+</button>
 
       </div>
 

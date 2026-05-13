@@ -1,10 +1,56 @@
-import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom"
+import { Toaster } from "react-hot-toast"
 
- function App(){
+
+import Home from "./pages/Home"
+import ProfileDetails from "./pages/ProfileDetails"
+import EditProfile from "./pages/EditProfile"
+
+import useProfiles from "./hooks/useProfiles"
+
+function App() {
+
+  const {
+    profiles,
+    setProfiles
+  } = useProfiles()
+
   return (
-<div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <Home/>
-    </div>
+<>
+    <Toaster position="bottom-center" />
+  
+    <Routes>
+
+      <Route
+        path="/"
+        element={
+          <Home profiles={profiles} />
+        }
+      />
+
+      <Route
+        path="/profile/:id"
+        element={
+          <ProfileDetails
+            profiles={profiles}
+          />
+        }
+      />
+
+      <Route
+        path="/edit-profile"
+        element={
+          <EditProfile
+            profiles={profiles}
+            setProfiles={setProfiles}
+          />
+        }
+      />
+
+    </Routes>
+    
+ </>
   )
- }
- export default App
+}
+
+export default App
