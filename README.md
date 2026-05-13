@@ -1,24 +1,63 @@
-# React Profile Card
+# Profile Card App
 
-A simple profile card project built using React and Tailwind CSS.
+A React + Tailwind CSS project that displays multiple profile cards with profile details and edit functionality.
 
 ## Features
 
-- Reusable Profile Card Component
-- Tailwind CSS Styling
-- Profile Image
-- Contact Details
-- QR Code
-- Responsive Design
+* Reusable Profile Card Component
+* React Router Navigation
+* Profile Details Page
+* Edit Profile Page
+* Update Profile Image
+* Dynamic Data Passing using React Router
+* Responsive UI using Tailwind CSS
 
-## Technologies Used
+## Tech Stack
 
-- React JS
-- Tailwind CSS
-- Vite
+* React
+* Tailwind CSS
+* React Router DOM
+* Vite
 
-## Project Structure
+## Pages
 
-- components
-- pages
-- assets
+### Home Page
+
+Displays multiple profile cards.
+
+### Profile Details Page
+
+Shows:
+
+* Profile Image
+* Name
+* Role
+* Phone
+* Email
+* Location
+* QR Code
+
+### Edit Profile Page
+
+Allows users to:
+
+* Edit Profile Details
+* Upload New Profile Image
+* Save Updated Information
+
+
+## Learning Concepts Used
+
+* Components
+* Props
+* useState
+* useNavigate
+* useLocation
+* Routing
+* Event Handling
+* Conditional Rendering
+* File Upload Handling
+
+## Author
+
+Fathima Raheeba
